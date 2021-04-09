@@ -1,0 +1,44 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "project root"
+		},
+		{
+			"path": "./linktious-client/"
+		},
+		{
+			"path": "./linktious-server/"
+		}
+	],
+	"launch": {
+		"configurations": [],
+		"compounds": [{
+			"name": "Debug Server & Client",
+			"configurations": ["Debug server", "Debug client"],
+			"presentation": {
+				"hidden": false,
+				"group": "",
+				"order": 1
+			}
+		}]
+	},
+	"settings": {
+		"files.exclude": {
+			"linktious-client": true,
+			"linktious-server": true
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"msjsdiag.debugger-for-chrome",
+			"ms-vscode-remote.remote-wsl",
+			"ms-azuretools.vscode-docker",
+			"dbaeumer.vscode-eslint",
+			"ms-python.python",
+			"jpoissonnier.vscode-styled-components",
+			"rvest.vs-code-prettier-eslint",
+			"bungcip.better-toml"
+		]
+	}
+}
