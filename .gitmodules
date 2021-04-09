@@ -1,8 +1,8 @@
-[submodule "linktious-server"]
-	path = linktious-server
-	url = git@github.com:Linktious/linktious-server.git
-	branch = .
 [submodule "linktious-client"]
 	path = linktious-client
 	url = git@github.com:Linktious/linktious-client.git
-	branch = .
+	branch = main
+[submodule "linktious-server"]
+	path = linktious-server
+	url = git@github.com:Linktious/linktious-server.git
+	branch = main
