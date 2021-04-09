@@ -5,7 +5,9 @@
 Clone project using:
 
 ```bash
-git clone --recurse-submodules git@github.com:Linktious/linktious.git
+git clone git@github.com:Linktious/linktious.git
+cd linktious
+make
 git submodule foreach --recursive git checkout main
 ```
 
