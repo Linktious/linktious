@@ -17,7 +17,9 @@ build-client:
 linktious-server:
 	git submodule init linktious-server
 	git submodule update --remote
+.PHONY: linktious-server
 
 linktious-client:
 	git submodule init linktious-client
 	git submodule update --remote
+.PHONY: linktious-client
