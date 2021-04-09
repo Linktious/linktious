@@ -1,0 +1,30 @@
+version: '3'
+services:
+  linkious-server:
+    build:
+      context: ./linktious-server
+    volumes:
+      - ./linktious-server/src/:/app/src
+    restart: always
+    ports:
+      - 8000:8888
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8888"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
+  linkious-client:
+    build:
+      context: ./linktious-client
+    volumes:
+      - ./linktious-client/:/app/
+    restart: always
+    environment: 
+      - BACKEND_URL=http://linktious-server:8888/
+    ports:
+      - 3000:3000
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:3000"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
