@@ -3,13 +3,15 @@ services:
   linkious-server:
     build:
       context: ./linktious-server
+    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --listen 0.0.0.0:5678 -m uvicorn src.app:app --host 0.0.0.0 --port 8000 --reload"]
     volumes:
       - ./linktious-server/src/:/app/src
     restart: always
     ports:
-      - 8000:8888
+      - 8000:8000
+      - 5678:5678
     healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8888"]
+        test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
         interval: 30s
         timeout: 10s
         retries: 5
@@ -20,7 +22,7 @@ services:
       - ./linktious-client/:/app/
     restart: always
     environment: 
-      - BACKEND_URL=http://linktious-server:8888/
+      - BACKEND_URL=http://linktious-server:8000/
     ports:
       - 3000:3000
     healthcheck:
