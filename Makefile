@@ -12,7 +12,7 @@ build-client: linktious-client
 .PHONY: build-client
 
 linktious-server:
-    git clone git@github.com:Linktious/linktious-server.git
+	git clone git@github.com:Linktious/linktious-server.git
 
 linktious-client:
-    git clone git@github.com:Linktious/linktious-client.git
+	git clone git@github.com:Linktious/linktious-client.git
