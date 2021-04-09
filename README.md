@@ -1,1 +1,1 @@
-# linktious-deployment
+# linktious
