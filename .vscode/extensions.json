@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "msjsdiag.debugger-for-chrome",
+        "ms-vscode-remote.remote-wsl",
+        "ms-azuretools.vscode-docker",
+        "dbaeumer.vscode-eslint",
+        "ms-python.python",
+        "jpoissonnier.vscode-styled-components",
+        "rvest.vs-code-prettier-eslint",
+        "bungcip.better-toml"
+    ]
+}
