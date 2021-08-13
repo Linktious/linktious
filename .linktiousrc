@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Add the following alias to your ~/.bash_aliases
+# alias linktiousrc="source /mnt/code/trees/linktious/.linktiousrc"
+
+if [[ -z "${LINKTIOUS_DIR}" ]]; then
+  LINKTIOUS_CODE_DIR="/mnt/code/trees/linktious"
+else
+  LINKTIOUS_CODE_DIR="${LINKTIOUS_DIR}"
+fi
+
+LINKTIOUS_SERVER_CODE_DIR="${LINKTIOUS_CODE_DIR}/linktious-server"
+LINKTIOUS_CLIENT_CODE_DIR="${LINKTIOUS_CODE_DIR}/linktious-client"
+
+
+# ALIAS
+alias cd_linktious="cd ${LINKTIOUS_CODE_DIR}"
+alias cd_linktious_server="cd ${LINKTIOUS_SERVER_CODE_DIR}"
+alias cd_linktious_client="cd ${LINKTIOUS_CLIENT_CODE_DIR}"
+
+alias linktious_env="source ${LINKTIOUS_SERVER_CODE_DIR}/.venv/bin/activate"
+alias linktious_server="linktious_env; python ${LINKTIOUS_SERVER_CODE_DIR}/src/app.py"
+
+linktious_yarn() {(
+  cd_linktious_client
+  yarn $@
+)}
+
+
+linktious_logo="
+
+
+ _       _____  _   _  _  __ _______  _____  ____   _    _   _____
+| |     |_   _|| \ | || |/ /|__   __||_   _|/ __ \ | |  | | / ____|
+| |       | |  |  \| || ' /    | |     | | | |  | || |  | || (___
+| |       | |  | . \` ||  <     | |     | | | |  | || |  | | \___ \\
+| |____  _| |_ | |\  || . \    | |    _| |_| |__| || |__| | ____) |
+|______||_____||_| \_||_|\_\   |_|   |_____|\____/  \____/ |_____/
+
+
+
+"
+echo "$linktious_logo"
