@@ -19,8 +19,9 @@ alias cd_linktious_server="cd ${LINKTIOUS_SERVER_CODE_DIR}"
 alias cd_linktious_client="cd ${LINKTIOUS_CLIENT_CODE_DIR}"
 
 alias linktious_env="source ${LINKTIOUS_SERVER_CODE_DIR}/.venv/bin/activate"
-alias linktious_server="linktious_env; python ${LINKTIOUS_SERVER_CODE_DIR}/src/app.py"
-alias linktious_init_db="linktious_env; python ${LINKTIOUS_SERVER_CODE_DIR}/src/playground.py"
+alias linktious_server="(cd_linktious_server; linktious_env; python src/app.py)"
+alias linktious_init_db="(cd_linktious_server; linktious_env; python src/playground.py)"
+alias linktious_client="linktious_yarn start"
 
 linktious_yarn() {(
   cd_linktious_client
